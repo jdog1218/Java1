@@ -30,17 +30,20 @@ public class RockPaperScissors {
 		player2 = consoleScanner.next();
 		
 		
-		if (player1.equals(stance[0])){
-			if (player1.equals(player2)) System.out.println(result[2]);
+		if (player1.equalsIgnoreCase(stance[0])){
+			if (player1.equalsIgnoreCase(player2)) System.out.println(result[2]);
 			else if (player2.toUpperCase().equals(stance[1])) System.out.println(result[1] + " Rock beats Paper!");
 			else if (player2.toUpperCase().equals(stance[2])) System.out.println(result[0] + " Rock beats Scissors!");
 		}
-		else if(player1.toUpperCase().equals(stance[1])){
+		else if(player1.equalsIgnoreCase(stance[1])){
 			if (player1.equals(player2)) System.out.println(result[2]);
-			else if (player2.toUpperCase().equals(stance[1])) System.out.println(result[1] + " Rock beats Paper!");
-			else if (player2.toUpperCase().equals(stance[2])) System.out.println(result[0] + " Rock beats Scissors!");
-			
-		}else
+			else if (player2.toUpperCase().equals(stance[1])) System.out.println(result[0] + " Paper beats Rock!");
+			else if (player2.toUpperCase().equals(stance[2])) System.out.println(result[1] + " Scissors beats Paper!");
+		}else {
+			if (player1.equalsIgnoreCase(player2)) System.out.println(result[2]);
+			else if (player2.toUpperCase().equals(stance[1])) System.out.println(result[0] + " Scissors beats Paper!");
+			else if (player2.toUpperCase().equals(stance[0])) System.out.println(result[1] + " Rock beats Scissors!");
+		}
 		consoleScanner.close();
 	}
 
