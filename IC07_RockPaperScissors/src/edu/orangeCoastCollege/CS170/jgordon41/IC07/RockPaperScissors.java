@@ -5,7 +5,7 @@
  * 
  * IC07_RockPaperScissors
  */
-package com.orangeCoastCollege.CS170.IC07.jgordon41;
+package edu.orangeCoastCollege.CS170.jgordon41.IC07;
 
 import java.util.Scanner;
 
