@@ -1,3 +1,5 @@
+package edu.orangecoastcollege.cs170.jgordon41.IC07;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
