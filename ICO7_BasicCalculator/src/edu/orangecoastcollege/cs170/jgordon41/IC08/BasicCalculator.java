@@ -1,4 +1,6 @@
+package edu.orangecoastcollege.cs170.jgordon41.IC08;
 import java.util.Scanner;
+
 
 /**
  * Gordon, Joel
@@ -12,6 +14,7 @@ import java.util.Scanner;
  * @author Joel
  *
  */
+
 public class BasicCalculator {
 
 	/**
