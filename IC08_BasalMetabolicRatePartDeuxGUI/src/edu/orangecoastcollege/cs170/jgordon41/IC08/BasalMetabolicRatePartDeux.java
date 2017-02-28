@@ -1,4 +1,4 @@
-package edu.orangecoastcollege.cs170.jgordon41.IC07;
+package edu.orangecoastcollege.cs170.jgordon41.IC08;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

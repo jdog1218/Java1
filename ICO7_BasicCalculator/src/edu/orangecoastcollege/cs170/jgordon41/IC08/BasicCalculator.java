@@ -7,7 +7,7 @@ import java.util.Scanner;
  * CS170
  * Feb-23-2017
  * 
- * ICO7_BasicCalculator
+ * ICO8_BasicCalculator
  */
 
 /**
@@ -67,7 +67,7 @@ public class BasicCalculator {
 		default: System.out.println("Operator not recognized");
 		System.exit(0);
 		}
-		System.out.println(operand1 + operator + operand2 + " = " + result);
+		System.out.println(operand1 + " " + operator + " " + operand2 + " = " + result);
 	}
 
 }

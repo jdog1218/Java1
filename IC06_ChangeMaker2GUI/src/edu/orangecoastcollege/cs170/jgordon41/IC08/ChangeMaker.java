@@ -1,5 +1,4 @@
-import java.util.Scanner;
-
+package edu.orangecoastcollege.cs170.jgordon41.IC08;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /*
