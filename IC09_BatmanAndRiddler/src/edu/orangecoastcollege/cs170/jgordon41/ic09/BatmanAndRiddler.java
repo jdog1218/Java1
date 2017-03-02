@@ -1,3 +1,6 @@
+import java.util.Random;
+
+package edu.orangecoastcollege.cs170.jgordon41.ic09;
 /**
  * Gordon, Joel
  * CS170
@@ -24,6 +27,11 @@ public class BatmanAndRiddler {
 		System.out.println("All four digits are different\n" + 
 							"The digit in the thousands place is three times the digit in the tens place\n"
 							+ "The number is odd\n" + "The sum of all four digits == 27");
+		
+		Random rng = new Random();
+		int randomNumber = rng.nextInt(1000)+1;
+		
+		
 
 	}
 
