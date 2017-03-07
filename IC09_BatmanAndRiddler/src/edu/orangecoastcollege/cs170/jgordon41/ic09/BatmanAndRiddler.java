@@ -31,6 +31,7 @@ public class BatmanAndRiddler {
 		Random rng = new Random();
 		int randomNumber = rng.nextInt(1000)+1;
 		
+		for(int i = 1; i <= )
 		
 
 	}
