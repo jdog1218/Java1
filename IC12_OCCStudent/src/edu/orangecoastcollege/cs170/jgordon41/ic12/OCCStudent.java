@@ -51,6 +51,22 @@ public class OCCStudent {
 		return mAge;
 	}
 	
+	public void setAge(int newAge){
+		mAge = newAge;
+	}
+	
+	public void setFullName(String newName){
+		mFullName = newName;
+	}
+	
+	public void setGpa(int newGpa){
+		mGpa = newGpa;
+	}
+	
+	public void setUserName(String newUserName){
+		mUserName = newUserName;
+	}
+	
 	public boolean equals(OCCStudent student1, OCCStudent student2){
 		boolean sameName = false;
 		
@@ -64,13 +80,23 @@ public class OCCStudent {
 		
 		 if(student1.getAge() > student2.getAge())
 			 return student1.getFullName() + " is older than " + student2.getFullName();
-		 else if (student1.getAge() < student2.getAge())
-			 return student2.getFullName() + " is older than " + student1.getFullName();
 		 else 
-			 return student1.getFullName() + " is the same age of  " + student2.getFullName();
+			 return student2.getFullName() + " is the older age of  " + student1.getFullName();
 	}
 	
+	public String isSameAge(OCCStudent student1, OCCStudent student2){
+		if (student1.getAge() == student2.getAge())
+			return student1.getFullName() + " is the same age as " + student2.getFullName();
+		else
+			return student1.getFullName() +" is not the same age as " + student2.getFullName();
+	}
 	
+	public String isYounger(OCCStudent student1, OCCStudent student2){
+		if(student1.getAge() < student2.getAge())
+			return student1.getFullName() + " is younger than " + student2.getFullName();
+		else 
+			return student2.getFullName() + " is younger than " + student1.getFullName();
+	}
 	//methods to make are isYounger, isSameAge, 
 	
 	
