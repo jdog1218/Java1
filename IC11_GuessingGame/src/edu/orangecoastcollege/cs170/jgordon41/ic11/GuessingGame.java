@@ -61,6 +61,7 @@ public class GuessingGame {
 			}else
 				System.out.println("Guess must be a 5-digit code between 10000 and 99999.\n");
 		}while(numberCorrect < 5);
+		System.out.println("****HOORAY!  You solved it.  You are so smart****");
 		consoleScanner.close();
 	}
 
