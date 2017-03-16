@@ -18,7 +18,10 @@ public class CreditCardDemo {
 	 */
 	public static void main(String[] args) {
 		CardNetwork network = CardNetwork.AMEX;
-		CreditCard card1 = new CreditCard(network, "Joel Gordon", "08/19", "8765435476545654", 768 );
+		CreditCard card1 = new CreditCard(network, "Joel Gordon", "08/19", "8765343547655654", 768 );
+		
+		System.out.println(card1.toString());
+		
 
 	}
 

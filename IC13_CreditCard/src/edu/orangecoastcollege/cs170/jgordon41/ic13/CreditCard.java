@@ -63,7 +63,7 @@ public class CreditCard {
 	}
 	
 	public String toString(){
-		return "Credit Card [" + this.getNetwork() + ", ************" + mNumber.substring(13) + ", " + this.getCardHolder() + ", " + this.getExpiration();
+		return "Credit Card [" + this.getNetwork() + ", ************" + mNumber.substring(12) + ", " + this.getCardHolder() + ", " + this.getExpiration() + "]";
 	}
 	
 	
