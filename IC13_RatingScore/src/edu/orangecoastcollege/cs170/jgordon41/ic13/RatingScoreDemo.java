@@ -18,8 +18,25 @@ public class RatingScoreDemo {
 	 */
 	public static void main(String[] args) {
 		
+		RatingScore rating = new RatingScore("The Transformers action movie", "I did not like the movie", 3, 5);
 		
+		RatingScore rating2 = new RatingScore("The Transformers action movie", "I did not like the movie", 3, 5);
+		
+		System.out.println(rating.toString());
+		
+		System.out.println("Is the 2 ratings the same? "); 
+		
+		//changed for test
+		//rating.setDescription("This movie is great");
+		
+		
+		if(rating.equals(rating2)){
+			System.out.println("They are the Same");
+		}else
+			System.out.println("They are not the Same");
 
+		
+		System.out.println("\n" + rating.toString());
 	}
 
 }

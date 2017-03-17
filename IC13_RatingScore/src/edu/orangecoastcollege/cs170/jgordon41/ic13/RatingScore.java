@@ -16,16 +16,6 @@ public class RatingScore {
 	private DecimalFormat m2Dp;
 	
 	
-	public RatingScore(RatingScore otherScore) {
-		this.mDescription = otherScore.getDescription();
-		this.mComments = otherScore.getComments();
-		this.mMaximumRating = otherScore.getMaximumRating();
-		this.mRating = otherScore.getRating();
-		this.m2Dp = new DecimalFormat("#.00");
-	}
-
-
-	
 	public RatingScore(String mDescription, String mComments, int mRating, int mMaximumRating) {
 		this.mDescription = mDescription;
 		this.mComments = mComments;
@@ -34,7 +24,13 @@ public class RatingScore {
 		this.m2Dp = new DecimalFormat("#.00");
 	}
 
-
+	public RatingScore(RatingScore otherScore) {
+		this.mDescription = otherScore.getDescription();
+		this.mComments = otherScore.getComments();
+		this.mMaximumRating = otherScore.getMaximumRating();
+		this.mRating = otherScore.getRating();
+		this.m2Dp = new DecimalFormat("#.00");
+	}
 	
 	public String getDescription() {
 		return mDescription;
@@ -84,41 +80,19 @@ public class RatingScore {
 
 
 	public boolean equals(RatingScore obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
 		
-		RatingScore other = (RatingScore) obj;
+		if(mDescription.equalsIgnoreCase(obj.getDescription()))
+				if(mComments.equalsIgnoreCase(obj.getComments()))
+					if (mRating == obj.getRating()) 
+						if(mMaximumRating == obj.getMaximumRating())
+							return true;
 		
-		if (mComments == null) {
-			if (other.mComments != null) {
-				return false;
-			}
-		} else if (!mComments.equals(other.mComments)) {
 			return false;
-		}
-		if (mDescription == null) {
-			if (other.mDescription != null) {
-				return false;
-			}
-		} else if (!mDescription.equals(other.mDescription)) {
-			return false;
-		}
-		if (mMaximumRating != other.mMaximumRating) {
-			return false;
-		}
-		if (mRating != other.mRating) {
-			return false;
-		}
-		return true;
 	}
 
 
 
 	public String toString(){
-		return "Rating Score [" + mDescription + ", " + m2Dp.format(mRating) + ", " + m2Dp.format(mMaximumRating) + ", " + mComments + mDescription + ".]";
+		return "Rating Score [" + mDescription + ", " + m2Dp.format(mRating) + ", " + m2Dp.format(mMaximumRating) + ", " + mComments + ".]";
 	}
 }

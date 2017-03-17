@@ -84,7 +84,8 @@ public class Line {
 	
 	
 	public boolean equals(Line other){
-		if(p1.equals(other))return true;
+		if(p1.equals(other))
+			return true;
 		else
 			return false;
 	}
