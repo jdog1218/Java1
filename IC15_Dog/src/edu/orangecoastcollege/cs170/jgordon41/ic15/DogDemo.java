@@ -13,7 +13,7 @@ public class DogDemo
 
     public static void main(String[] args)
     {
-        Dog scooby = new Dog(7.0, "Scooby", "Great Dane");
+        Dog scooby = new Dog("Scooby", "Great Dane", 7.0);
         Dog myDog = new Dog(scooby);
         
         System.out.println(scooby + "\n" + myDog + "\n");

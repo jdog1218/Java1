@@ -18,7 +18,7 @@ public class Dog
     /**
      * 
      */
-    public Dog(double age, String name, String breed)
+    public Dog(String name, String breed, double age)
     {
         mAge = age;
         mName = name;
@@ -70,7 +70,7 @@ public class Dog
     }
     
     public String toString(){
-        return "Dog [Name =" + mName + ", Breed =" + mBreed + ", Age =" + mAge + ", Human Age =" + ageInHumanYears() + "]";
+        return "Dog [Name = " + mName + ", Breed = " + mBreed + ", Age = " + mAge + ", Human Age = " + ageInHumanYears() + "]";
     }
     
     public double ageInHumanYears(){

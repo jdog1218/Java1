@@ -7,6 +7,8 @@
  */
 package edu.orangecoastcollege.cs170.jgordon41.ic14;
 
+import java.text.DecimalFormat;
+
 /**
  * @author Joel
  *
@@ -14,6 +16,8 @@ package edu.orangecoastcollege.cs170.jgordon41.ic14;
 public class Point {
 
 	private int mX, mY;
+	
+	private DecimalFormat zeroDp = new DecimalFormat("#");
 	
 	public Point(int X, int Y) {
 		// TODO Auto-generated constructor stub
@@ -62,10 +66,10 @@ public class Point {
 	
 
 	public double distanceTo(Point other){
-		double diffX2 = Math.pow(other.getX() - mX, 2);
-		double diffY2 = Math.pow(other.getY() - mY, 2);
+		double diffX2 = Math.pow(other.mX - mX, 2);
+		double diffY2 = Math.pow(other.mY - mY, 2);
 		
-		return Math.sqrt(diffX2 + diffY2);
+		return Math.round(Math.sqrt(diffX2 + diffY2));
 	}
 	
 }
