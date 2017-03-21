@@ -28,6 +28,15 @@ public class CreditCard {
 		this.mNumber = number;
 		this.mSecCode = secCode;
 	}
+	public CreditCard (CreditCard obj){
+		
+		
+		this.network = obj.getNetwork();
+		this.mCardHolder = obj.getCardHolder();
+		this.mExpiration = obj.getExpiration();
+		this.mNumber = obj.getNumber();
+		this.mSecCode = obj.mSecCode;
+	}
 
 	public String getCardHolder() {
 		return mCardHolder;
