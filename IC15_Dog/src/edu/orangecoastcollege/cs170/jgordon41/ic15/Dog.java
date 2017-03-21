@@ -1,14 +1,14 @@
-/**
- * Joel Gordon
- * 3/21/17
+/*
+ * Gordon,Joel
+ * cs170
+ * March 21st,2017
+ * 
  * IC15_Dog
  */
 package edu.orangecoastcollege.cs170.jgordon41.ic15;
 
-/**
- * @author jgordon41
- *
- */
+
+
 public class Dog
 {
 
