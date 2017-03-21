@@ -35,8 +35,14 @@ public class RatingScoreDemo {
 		}else
 			System.out.println("They are not the Same");
 
-		
+		rating.setDescription("The movie is very action like and i like it alot");
 		System.out.println("\n" + rating.toString());
+		
+		System.out.println("Sercond Check if they are the same");
+		if(rating.equals(rating2)){
+			System.out.println("They are the Same");
+		}else
+			System.out.println("They are not the Same");
 	}
 
 }
