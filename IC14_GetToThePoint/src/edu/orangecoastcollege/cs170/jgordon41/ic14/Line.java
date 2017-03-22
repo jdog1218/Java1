@@ -91,7 +91,7 @@ public class Line {
 	}
 	
 	public String toString(){
-		return "Line[(x1 = " + p1.getX() + ", y1 = " + p1.getY() + "), (x2 = " + p2.getX() + ", y2 = " + p2.getY();
+		return "Line[(x1 = " + p1.getX() + ", y1 = " + p1.getY() + "), (x2 = " + p2.getX() + ", y2 = " + p2.getY() + ")]";
 	}
 	
 	public double length(Point p1, Point p2){
