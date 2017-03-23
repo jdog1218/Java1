@@ -1,5 +1,7 @@
 package edu.orangecoastcollege.cs170.jgordon41.ic15;
 
+import java.text.DecimalFormat;
+
 /*
  * Gordon, Joel
  * cs170
@@ -11,9 +13,9 @@ package edu.orangecoastcollege.cs170.jgordon41.ic15;
 public class GradeDistribution
 {
 
-    private int mNumberAs,mNumberBs,mNumberCs,mNumberDs,mNumberFs;
+    private double mNumberAs,mNumberBs,mNumberCs,mNumberDs,mNumberFs;
 
-    public GradeDistribution(int mNumberAs, int mNumberBs, int mNumberCs, int mNumberDs, int mNumberFs)
+    public GradeDistribution(double mNumberAs, double mNumberBs, double mNumberCs, double mNumberDs, double mNumberFs)
     {
         this.mNumberAs = mNumberAs;
         this.mNumberBs = mNumberBs;
@@ -31,27 +33,27 @@ public class GradeDistribution
         this.mNumberFs = obj.mNumberFs;
     }
 
-    public int getNumberAs()
+    public double getNumberAs()
     {
         return mNumberAs;
     }
 
-    public int getNumberBs()
+    public double getNumberBs()
     {
         return mNumberBs;
     }
 
-    public int getNumberCs()
+    public double getNumberCs()
     {
         return mNumberCs;
     }
 
-    public int getNumberDs()
+    public double getNumberDs()
     {
         return mNumberDs;
     }
 
-    public int getNumberFs()
+    public double getNumberFs()
     {
         return mNumberFs;
     }
@@ -123,9 +125,23 @@ public class GradeDistribution
     	return result;
     	
     }
+    /*
+     * @perameter whichGrade Type which grade is needed to be calculated out of the total number of grades
+     */
+    public double getPercent(String whichGrade){
+    	
+    	switch(whichGrade){
+    	case "a": return (this.mNumberAs/this.getNumberOfGrades()*100);
+    	case "b": return (this.mNumberBs/this.getNumberOfGrades()*100);
+    	case "c": return (this.mNumberCs/this.getNumberOfGrades()*100);
+    	case "d": return (this.mNumberDs/this.getNumberOfGrades()*100);
+    	case "e": return (this.mNumberFs/this.getNumberOfGrades()*100);
+    	default : return 0.0;
+    	}
+    }
     
-    public int getNumberOfGrades(){
-    	int result = 0;
+    public double getNumberOfGrades(){
+    	double result = 0;
     	result += mNumberAs;
     	result += mNumberBs;
     	result += mNumberCs;
@@ -135,4 +151,33 @@ public class GradeDistribution
     	return result;
     }
     
+public String getPercentAs(){
+	DecimalFormat ZeroDp = new DecimalFormat("#");
+	
+	return ZeroDp.format(this.getPercent("a")) + "%";
+}
+    
+public String getPercentBs(){
+	DecimalFormat ZeroDp = new DecimalFormat("#");
+	
+	return ZeroDp.format(this.getPercent("b")) + "%";
+}
+
+public String getPercentCs(){
+	DecimalFormat ZeroDp = new DecimalFormat("#");
+	
+	return ZeroDp.format(this.getPercent("c")) + "%";
+}
+
+public String getPercentDs(){
+	DecimalFormat ZeroDp = new DecimalFormat("#");
+	
+	return ZeroDp.format(this.getPercent("d")) + "%";
+}
+
+public String getPercentFs(){
+	DecimalFormat ZeroDp = new DecimalFormat("#");
+	
+	return ZeroDp.format(this.getPercent("f")) + "%";
+}
 }
