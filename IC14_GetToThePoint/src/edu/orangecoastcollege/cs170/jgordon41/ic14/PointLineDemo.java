@@ -23,16 +23,16 @@ public class PointLineDemo {
 		Point p3 = new Point(p1);
 		Line l1 = new Line(p1,p2);
 		
-		System.out.println(p1);
+		System.out.println("Point 1 " + p1);
 		
-		//p1.setX(3);
-		//p1.setY(4);
+		p1.setX(3);
+		p1.setY(4);
 		
-		System.out.println(p1);
+		System.out.println("Point 1 " + p1);
 		
-		System.out.println(p1.equals(p2) ? "The Same":"Not The same" );
+		System.out.println("Point 1 and Point 2 are " + (p1.equals(p2) ? "The Same":"Not The same") );
 		
-		System.out.println(p3.equals(p1) ? "The Same":"Not The same" );
+		System.out.println("Point 3 and Point 1 are " + (p3.equals(p1) ? "The Same":"Not The same") );
 		
 		System.out.println(p2.distanceTo(p1));
 		
