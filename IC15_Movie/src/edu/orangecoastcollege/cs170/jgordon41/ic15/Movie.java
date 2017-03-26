@@ -11,12 +11,29 @@ public class Movie
 {
 
     private int mBadNumber, mExcellentNumber, mOkNumber, mTerriableNumber, mGoodNumber;
-    private String mDireactor, mName, mMPAARating;
-    
-    public Movie()
-    {
-        
-    }
+    private String mDirector, mName, mMPAARating;
+
+	public Movie(int mBadNumber, int mExcellentNumber, int mOkNumber, int mTerriableNumber, int mGoodNumber,
+			String mDireactor, String mName, String mMPAARating) {
+		this.mBadNumber = mBadNumber;
+		this.mExcellentNumber = mExcellentNumber;
+		this.mOkNumber = mOkNumber;
+		this.mTerriableNumber = mTerriableNumber;
+		this.mGoodNumber = mGoodNumber;
+		this.mDirector = mDireactor;
+		this.mName = mName;
+		this.mMPAARating = mMPAARating;
+	}
+	public Movie(Movie other){
+		this.mBadNumber = other.mBadNumber;
+		this.mExcellentNumber = other.mExcellentNumber;
+		this.mOkNumber = other.mOkNumber;
+		this.mTerriableNumber = other.mTerriableNumber;
+		this.mGoodNumber = other.mGoodNumber;
+		this.mDirector = other.mDirector;
+		this.mName = other.mName;
+		this.mMPAARating = other.mMPAARating;
+	}
 
 	public int getBadNumber() {
 		return mBadNumber;
@@ -35,7 +52,7 @@ public class Movie
 	}
 
 	public String getDireactor() {
-		return mDireactor;
+		return mDirector;
 	}
 
 	public String getName() {
@@ -51,7 +68,7 @@ public class Movie
 	}
 
 	public void setDireactor(String mDireactor) {
-		this.mDireactor = mDireactor;
+		this.mDirector = mDireactor;
 	}
 
 	public void setName(String mName) {
@@ -64,7 +81,7 @@ public class Movie
 
 	public boolean equals(Movie other){
 		if (other.mBadNumber == mBadNumber)
-			if(other.mDireactor.equalsIgnoreCase(mDireactor))
+			if(other.mDirector.equalsIgnoreCase(mDirector))
 				if(other.mExcellentNumber == mExcellentNumber)
 					if(other.mGoodNumber == mGoodNumber)
 						if(other.mMPAARating == mMPAARating)
@@ -74,5 +91,16 @@ public class Movie
 										return true;
 		return false;
 	}
+	
+	public String toString(){
+		return  "Movie [Name=" + mName + ", Director=" + mDirector + ", MPAA Rating=" + mMPAARating + 
+				", Average Rating=" + this.getAverageRating() + "]";
+	}
+	
+	public double getAverageRating(){
+		return 0.0;
+	}
+	
+	
 	
 }
