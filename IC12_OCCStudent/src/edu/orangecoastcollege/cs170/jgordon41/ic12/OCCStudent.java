@@ -67,41 +67,52 @@ public class OCCStudent {
 		mUserName = newUserName;
 	}
 	
-	public boolean equals(OCCStudent student1, OCCStudent student2){
+	public boolean equals( OCCStudent student2){
 		boolean sameName = false;
 		
-		if (student1.getFullName().equalsIgnoreCase(student2.getFullName()))
+		if (this.getFullName().equalsIgnoreCase(student2.getFullName()))
 			sameName = true;
 		
 		return sameName;
 	}
-	
-	public String isOlder(OCCStudent student1, OCCStudent student2){
-		
-		 if(student1.getAge() > student2.getAge())
-			 return student1.getFullName() + " is older than " + student2.getFullName();
-		 else 
-			 return student2.getFullName() + " is the older age of  " + student1.getFullName();
-	}
-	
-	public String isSameAge(OCCStudent student1, OCCStudent student2){
-		if (student1.getAge() == student2.getAge())
-			return student1.getFullName() + " is the same age as " + student2.getFullName();
-		else
-			return student1.getFullName() +" is not the same age as " + student2.getFullName();
-	}
-	
-	public String isYounger(OCCStudent student1, OCCStudent student2){
-		if(student1.getAge() < student2.getAge())
-			return student1.getFullName() + " is younger than " + student2.getFullName();
+	public boolean equalStudents(OCCStudent student2){
+		if(this.getFullName().equalsIgnoreCase(student2.getFullName()) && 
+				this.getAge() == student2.getAge() && 
+				this.getCNumber().equalsIgnoreCase(student2.getCNumber()) && 
+				this.getGpa() == student2.getGpa() && 
+				this.getUserName().equalsIgnoreCase(student2.getUserName())){
+			return true;
+		}
 		else 
-			return student2.getFullName() + " is younger than " + student1.getFullName();
+			return false;
+	}
+	
+	public String isOlder( OCCStudent student2){
+		
+		 if(this.getAge() > student2.getAge())
+			 return this.getFullName() + " is older than " + student2.getFullName();
+		 else 
+			 return student2.getFullName() + " is the older age of  " + this.getFullName();
+	}
+	
+	public String isSameAge( OCCStudent student2){
+		if (this.getAge() == student2.getAge())
+			return this.getFullName() + " is the same age as " + student2.getFullName();
+		else
+			return this.getFullName() +" is not the same age as " + student2.getFullName();
+	}
+	
+	public String isYounger(OCCStudent student2){
+		if(this.getAge() < student2.getAge())
+			return this.getFullName() + " is younger than " + student2.getFullName();
+		else 
+			return student2.getFullName() + " is younger than " + this.getFullName();
 	}
 	//methods to make are isYounger, isSameAge, 
 	
 	
 	public String toString(){
-		return "This is the students name: " + mFullName + "\nStudent has a C Number of " + mCNumber + "with a gpa of " + mGpa + 
+		return "This is the students name: " + mFullName + "\nStudent has a C Number of " + mCNumber + " with a gpa of " + mGpa + 
 				"\nThe Username of this student is: " + mUserName + "\nThe age of this student is " + mAge;
 	}
 }
