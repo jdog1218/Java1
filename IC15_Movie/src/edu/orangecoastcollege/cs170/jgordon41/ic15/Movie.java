@@ -98,9 +98,38 @@ public class Movie
 	}
 	
 	public double getAverageRating(){
-		return 0.0;
+		if (mExcellentNumber == 0 && mGoodNumber == 0 && mOkNumber == 0 && mBadNumber == 0 && mTerriableNumber == 0)
+			return 0.0;
+		double ex = mExcellentNumber*5;
+		double gn = mGoodNumber * 4;
+		double ok = mOkNumber * 3;
+		double bn = mBadNumber * 2;
+		double tn = mTerriableNumber * 1;
+		
+		double total = mExcellentNumber + mGoodNumber + mOkNumber + mBadNumber + mTerriableNumber;
+		
+		return ex + gn + ok + bn + tn/total;
+		
 	}
 	
+	public void addRating(int rating){
+		switch (rating){
+		case 1: mTerriableNumber += 1;
+		case 2: mBadNumber += 1;
+		case 3: mOkNumber += 1;
+		case 4: mGoodNumber += 1;
+		case 5: mExcellentNumber += 1;
+		}
+	}
 	
+	public void removeRating(int rating){
+		switch (rating){
+		case 1: mTerriableNumber += 1;
+		case 2: mBadNumber += 1;
+		case 3: mOkNumber += 1;
+		case 4: mGoodNumber += 1;
+		case 5: mExcellentNumber += 1;
+		}
+	}
 	
 }
