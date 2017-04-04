@@ -19,22 +19,23 @@ public class HangmanDemo {
 	 */
 	public static void main(String[] args) {
 		
-		Hangman word1 = new Hangman("Struck");
+		Hangman word1 = new Hangman("Fire");
 		Scanner consoleScanner = new Scanner(System.in);
 		char guess = 'a';
 		
-		System.out.println("This is hangman, I chose a string for you.");
-		System.out.println(word1.getSecretWord());
+		System.out.println("This is hangman, I chose a word for you. Here are all the letters " + word1.getDisgusedWord() + "\nYou got Seven Guesses, GoodLuck.");
 		do {
 			System.out.println("Please guess a letter, ");
 			guess = consoleScanner.next().charAt(0);
 			
 			System.out.println(word1.makeGuesses(guess));
 			
+			if(word1.getNumberOfGuesses() <= 0)
+				break;
 			
-		}while(word1.isFound() || word1.getNumberOfGuesses() == 0);
+		}while(word1.isFound());
 		
-		System.out.println(word1.getNumberOfGuesses()==0 ? "You ran out of guesses.": "You have made all the right guesses.");
+		System.out.println(word1.getNumberOfGuesses() == 0 ? "You ran out of guesses.": "You have made all the right guesses.");
 		System.out.println("Thanks for playing.");
 		
 		consoleScanner.close();
