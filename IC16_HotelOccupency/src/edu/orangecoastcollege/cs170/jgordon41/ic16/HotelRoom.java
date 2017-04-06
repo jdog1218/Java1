@@ -68,18 +68,19 @@ public class HotelRoom
     }
 
     public void addToRoom(int numberOfPeople){
-        if(numberOfPeople + mPeopleInRoom <= 4)
+        if(numberOfPeople + mPeopleInRoom > 4)
             throw new IllegalArgumentException("Please enter a number people below 4 but greater than 0");
         sTotalOccupancy += numberOfPeople;
         mPeopleInRoom += numberOfPeople;
     }
 
     public void removeFromRoom(int numberOfPeople){
-        if(numberOfPeople + mPeopleInRoom >= 4){
+        if(mPeopleInRoom - numberOfPeople < 0){
             throw new IllegalArgumentException("Please enter a number people below 4 but greater than 0");
+        }else{
+        	mPeopleInRoom -= numberOfPeople;
+        	sTotalOccupancy -= numberOfPeople;
         }
-        mPeopleInRoom -= numberOfPeople;
-        sTotalOccupancy = numberOfPeople;
     }
 
     
