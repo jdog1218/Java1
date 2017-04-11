@@ -32,7 +32,7 @@ public class TimeDemo
         
         Time time = new Time(hour,minute);
         
-        System.out.println("Out Put " + time);
+        System.out.println("OutPut " + time);
         
 
     }
