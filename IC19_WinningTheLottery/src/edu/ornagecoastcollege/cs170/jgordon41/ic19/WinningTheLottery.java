@@ -16,7 +16,7 @@ public class WinningTheLottery
     public static void main(String[] args)
     {
         int[] winningNumbers = new int[5];
-        int[] guessNumbers = new int[winningNumbers.length -1];
+        int[] guessNumbers = new int[winningNumbers.length];
         Random rng = new Random();
         int digitsCorrect = 0;
         int moneySpent = 1;
