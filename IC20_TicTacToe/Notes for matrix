@@ -1,0 +1,4 @@
+Multidemisional Arrays:
+	an array of arrays
+	*An array with both rows and columns
+	dataType [][] Name = new dataType [3][3];
