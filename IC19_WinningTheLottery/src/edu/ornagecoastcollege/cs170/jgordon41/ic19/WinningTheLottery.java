@@ -20,7 +20,7 @@ public class WinningTheLottery
         Random rng = new Random();
         int digitsCorrect = 0;
         int moneySpent = 1;
-        
+        System.out.print("The winning numbers are:\n" );
         for(int i = 0; i < winningNumbers.length; i++){
             winningNumbers[i] = rng.nextInt(36)+1;
             System.out.print(winningNumbers[i] + " ");
@@ -36,7 +36,7 @@ public class WinningTheLottery
             }
         }while(digitsCorrect < 5);
         
-        System.out.println("Money Spent: $" + moneySpent);
+        System.out.println("\nMoney Spent: $" + moneySpent + "   You won Fantasy5!  5 out of 5 lottery numbers were correct.  You win $75,000!!!");
         
     }
 
