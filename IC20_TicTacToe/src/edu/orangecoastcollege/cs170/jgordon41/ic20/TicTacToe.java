@@ -28,10 +28,25 @@ public class TicTacToe
             
             board[row][col] = ((moves %2) == 0 ? 'x':'o');
             moves++;
-            if(board == )//one massive if statement
+            
         
-        }while (moves < 9);
+        }while (moves < 9 && !checkWIN());
         
+    }
+    
+    public static boolean checkWIN(){
+        //checks for the tictac toe across everyrow
+        boolean checks = false;
+        for (char[] row : board){
+            for (char col : row){
+                if(col == 'x'){
+                     
+                }
+            }
+        }
+        
+        
+        return checks;
     }
     
     public static void printBoard(){

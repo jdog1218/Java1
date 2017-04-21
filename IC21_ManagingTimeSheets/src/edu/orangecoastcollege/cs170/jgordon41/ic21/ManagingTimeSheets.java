@@ -1,6 +1,5 @@
 package edu.orangecoastcollege.cs170.jgordon41.ic21;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ManagingTimeSheets
@@ -18,7 +17,7 @@ public class ManagingTimeSheets
         
         consoleScanner.close();
     }
-    //The Redudant emthods used multiple times
+    //The Redudant methods used multiple times
     public static void getArraySum(double[][] array){
         int counter = 1;
         for (double[] row : array){
