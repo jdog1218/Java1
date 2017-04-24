@@ -18,35 +18,70 @@ public class TicTacToe
             }
         }
         System.out.println("Welcome to Tic-Tac-Toe!");
-        
+        int row = 0,col = 0;
         do{
             printBoard();
             System.out.print("Please enter row: ");
-            int row = consoleScanner.nextInt()-1;
+            row = consoleScanner.nextInt()-1;
             System.out.print("Please enter column: ");
-            int col = consoleScanner.nextInt()-1;
+            col = consoleScanner.nextInt()-1;
             
             board[row][col] = ((moves %2) == 0 ? 'x':'o');
             moves++;
             
         
-        }while (moves < 9 && !checkWIN());
+        
+        }while (moves < 9 && !checkWIN(row, col, board));
+        printBoard();
+        consoleScanner.close();
+        System.out.println(moves != 9 ? "Thanks for playing, We have a winner": "ITS A CATS GAME!");
         
     }
     
-    public static boolean checkWIN(){
-        //checks for the tictac toe across everyrow
-        boolean checks = false;
-        for (char[] row : board){
-            for (char col : row){
-                if(col == 'x'){
-                     
-                }
+    
+    public static boolean checkWIN(int x, int y, char[][] board){
+    	
+    	for(int i = 0; i < COLS; i++){
+            if(board[x][i] != board[x][y])
+                break;
+            if(i == COLS-1){
+                return true;
+            }
+        }
+    	//check row
+        for(int i = 0; i < COLS; i++){
+            if(board[i][y] != board[x][y])
+                break;
+            if(i == COLS-1){
+                return true;
             }
         }
         
-        
-        return checks;
+        //check diag
+        if(x == y){
+            //we're on a diagonal
+            for(int i = 0; i < COLS; i++){
+                if(board[i][i] != board[x][y])
+                    break;
+                if(i == COLS-1){
+                    return true;
+                }
+            }
+        }
+
+        //check anti diag (thanks rampion)
+        if(x + y == COLS - 1){
+            for(int i = 0;i<COLS;i++){
+                if(board[i][(COLS-1)-i] != board[x][y])
+                    break;
+                if(i == COLS-1){
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
     }
     
     public static void printBoard(){
