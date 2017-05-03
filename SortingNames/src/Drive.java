@@ -1,14 +1,22 @@
 public class Drive {
 	public static void main(String[] args) {
-		String[] names = { "garret", "joel", "kevin", "brown", "roy", "karen", "shannon" };
-		System.out.println("Before");
-		for (String x : names) {
-			System.out.println(x);
+		
+		printRange('e','g');
+		printRange('n','s');
+		printRange('z','a');
+		printRange('q','r');
+		
+		
+		
 		}
-		Static_Method.SortNames(names);
-		System.out.println("After");
-		for (String x : names) {
-			System.out.println(x);
+
+	private static void printRange(char start, char end) {
+		// TODO Auto-generated method stub
+		for(char letter = start; letter <= end; letter++){
+			System.out.print(letter);
 		}
+		System.out.println();
 	}
-}
+
+	
+	}

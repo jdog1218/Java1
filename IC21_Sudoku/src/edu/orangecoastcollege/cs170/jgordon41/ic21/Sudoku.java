@@ -144,7 +144,9 @@ public class Sudoku {
 
 
 
-
+/*
+ * Keeps Returning value of check false, not true if i type in anything which then kicks out of do while in the main method
+ */
 	public static boolean checkGame(int[][] workingPuzzle){
 		boolean check = true;
 		for(int row = 0; row < workingPuzzle.length; row++){
