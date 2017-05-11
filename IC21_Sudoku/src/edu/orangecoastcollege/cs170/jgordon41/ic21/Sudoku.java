@@ -117,7 +117,7 @@ public class Sudoku
             case "Q": System.out.println("Thanks for Playing!");break;
             default: System.out.println("Sorry i dont recognize that.");break;
         }
-        }while(!input.equalsIgnoreCase("Q"));
+        }while(!input.equalsIgnoreCase("Q")&& !gameISWon());
     }
     
     
