@@ -44,7 +44,7 @@ public class iSleepy
         for(double night: slept){
             if(night >= 8 && night <= 10){//recommended nights of sleep
                 recommended++;
-            }else if(night >=7 && night <= 11)//apporaite nights of sleep
+            }else if(night >=7 && night <= 11)//appropriate nights of sleep
                 appropiate++;
             else//not recommended
                 notRecommended++;
