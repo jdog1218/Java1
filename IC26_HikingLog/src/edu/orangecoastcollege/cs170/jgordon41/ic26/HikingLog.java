@@ -23,7 +23,7 @@ import java.util.Scanner;
 public class HikingLog {
 
 	static HashMap<Hike, Integer> hikingLog;
-	
+	static FileOutputStream file;
 	/**
 	 * @param args
 	 */
@@ -33,7 +33,8 @@ public class HikingLog {
 		Scanner consoleScanner = new Scanner(System.in);
 		String name = "", dateCompleted, comment;
 		try {
-			ObjectInputStream inputFile = new ObjectInputStream(new FileInputStream(new File("hikinglog.dat")));
+			ObjectOutputStream inputFile = new ObjectOutputStream(new FileOutputStream("HikingLog.dat"));
+			inputFile.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,6 +47,7 @@ public class HikingLog {
 		System.out.println("---------------------Hiking Log------------------------");
 		
 		do{
+			consoleScanner.nextLine();
 			System.out.print("Please enter name of hike completed (or \"quit\" to exit):");
 			name = consoleScanner.nextLine();
 			if(name.equalsIgnoreCase("quit"))
@@ -58,7 +60,7 @@ public class HikingLog {
 			comment = consoleScanner.nextLine();
 			Hike input = new Hike(name, dateCompleted, comment, miles);
 			hikingLog.put(input, count);
-		}while(name.equalsIgnoreCase("quit"));
+		}while(!name.equalsIgnoreCase("quit"));
 		
 
 	}
