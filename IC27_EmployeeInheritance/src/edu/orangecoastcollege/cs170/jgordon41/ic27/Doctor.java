@@ -68,9 +68,45 @@ public class Doctor extends Employee {
 
 	@Override
 	public String toString() {
-		return "Doctor [Honorific=" + mHonorific + ", Name=" + mName + ", YearHired=" + mYearHired
+		return "Doctor [ " + mHonorific + mName + ", YearHired=" + mYearHired
 				+ ", AnnualSalary=" + mAnnualSalary + ", OfficeFee=" + mOfficeFee + ", Speciality=" + mSpeciality
 				+ "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + mOfficeFee;
+		result = prime * result + ((mSpeciality == null) ? 0 : mSpeciality.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (!(obj instanceof Doctor)) {
+			return false;
+		}
+		Doctor other = (Doctor) obj;
+		if (mOfficeFee != other.mOfficeFee) {
+			return false;
+		}
+		if (mSpeciality == null) {
+			if (other.mSpeciality != null) {
+				return false;
+			}
+		} else if (!mSpeciality.equals(other.mSpeciality)) {
+			return false;
+		}
+		return true;
 	}
 	
 	

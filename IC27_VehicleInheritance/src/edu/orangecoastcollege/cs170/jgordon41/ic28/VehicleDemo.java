@@ -11,25 +11,30 @@ public class VehicleDemo {
 		
 		Vehicle maclareanP1 = new Vehicle(727, "Maclearn", 8, dylan);
 		Scanner consoleScanner = new Scanner(System.in);
-		String input = "";
+		String name;
 		allVehicleList.add(maclareanP1);
 		do{
+			consoleScanner.reset();
 			System.out.print("Name of Car (or type \"quit\"): ");
-			String name = consoleScanner.nextLine();
+			name = consoleScanner.nextLine();
+			
 			if(name.equalsIgnoreCase("quit"))
 				break;
 			System.out.print("enter name of dealer: ");
 			String make = consoleScanner.nextLine();
 			System.out.print("Please Cylinders: ");
 			int cynlinders = consoleScanner.nextInt();
-			System.out.println("Please enter Horse Power: ");
+			System.out.print("Please enter Horse Power: ");
 			int horsePower = consoleScanner.nextInt();
-			System.out.println("Please enter Owner: ");
+			consoleScanner.nextLine();
+			System.out.print("Please enter Owner: ");
 			String ownerName = consoleScanner.nextLine();
 			System.out.print("Please enter your honorific: ");
 			String honorific = consoleScanner.nextLine();
 			allVehicleList.add(new Vehicle(horsePower, make, cynlinders,new Person(honorific, ownerName)));
-		}while(input.equalsIgnoreCase("quit"));
+		}while(!name.equalsIgnoreCase("quit"));
+		consoleScanner.close();
+		System.out.println();
 		for(Vehicle v:allVehicleList){
 			System.out.println(v);
 		}

@@ -2,6 +2,7 @@ package edu.orangecoastcollege.cs170.jgordon41.ic28;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Vehicle implements Serializable {
 
 	protected int horsepower;
@@ -92,8 +93,8 @@ public class Vehicle implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Vehicle [mManufactureName=" + mManufactureName + ", horsepower=" + horsepower + ", mCylinders="
-				+ mCylinders + ", mOwner=" + mOwner + "]";
+		return "Vehicle [ Make =" + mManufactureName + ", Horsepower= " + horsepower + ", Cylinders="
+				+ mCylinders + ", " + mOwner.getFullName() + "]";
 	}
 	
 	
