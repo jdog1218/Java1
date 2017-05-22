@@ -10,6 +10,7 @@ public class VehicleDemo {
 			Scanner consoleScanner = new Scanner(System.in);
 			String name = "";
 			do{
+				consoleScanner.nextLine();
 				System.out.print("Do you have a boat or a car? ");
 				boolean boat = (consoleScanner.nextLine().equalsIgnoreCase("boat"));
 				if(!boat){
@@ -31,10 +32,10 @@ public class VehicleDemo {
 				String make = consoleScanner.nextLine();
 				System.out.print("Please how many Cabins: ");
 				int cabins = consoleScanner.nextInt();
-				System.out.println("Please enter Year: ");
+				System.out.print("Please enter Year: ");
 				int year = consoleScanner.nextInt();
 				allVehicleList.add(new Boat(year, make, cabins));
-			}while(name.equalsIgnoreCase("quit"));
+			}while(!name.equalsIgnoreCase("quit"));
 			consoleScanner.close();
 			for(Vehicle v:allVehicleList){
 				System.out.println(v);

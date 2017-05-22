@@ -60,8 +60,8 @@ public class Truck extends Vehicle{
 
 	@Override
 	public String toString() {
-		return "Truck [ManufactureName=" + mManufactureName + ", Owner=" + mOwner + ", horsepower=" + horsepower
-				+ ", mCylinders=" + mCylinders + ", towingCapacity=" + towingCapacity + ", loadCapicity=" + loadCapicity
+		return "Truck [Make=" + mManufactureName + ", Owner=" + mOwner.getFullName() + ", Horse Power=" + horsepower
+				+ ", Cylinders=" + mCylinders + ", Towing Capacity=" + towingCapacity + ", Load Capicity=" + loadCapicity
 				+ "]";
 	}
 

@@ -93,7 +93,7 @@ public class Vehicle implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Vehicle [ Make =" + mManufactureName + ", Horsepower= " + horsepower + ", Cylinders="
+		return "Car [ Make =" + mManufactureName + ", Horsepower= " + horsepower + ", Cylinders="
 				+ mCylinders + ", " + mOwner.getFullName() + "]";
 	}
 	
