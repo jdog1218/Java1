@@ -1,0 +1,32 @@
+Strategy for serilization with binary files and abstract Inheitance
+1)Build the abstract parent class First
+	public abstract class PaleoFood implments Serilizable
+2) build concrete children classes
+	public class Meat extends PaleoFood implments Serlizable
+	pulic class Produce extends PaleoFoods implments serliable
+	
+	
+	**Don't do -->PaleoFood -->public int get*m*Calories(); nooo
+3) build exception Class 
+	public class UnknownMeatException extends Exception{
+	only one constructor method
+		public UnknownMeatException(String message){
+			super(message);
+		}
+	} 
+4)Create Demo Class
+	a)loop for user input (do/while)
+		*switch statment for choices(3)
+		*Case 1: Meat
+					{ask user for type
+	Surrond			{ask user for cooking Temp
+	Try and Catch	{create new meat object
+					{add to array list
+		*Case 2: Produce
+			ask user for organic
+			create new Produce object
+			add to array List
+		*Case 3: quit
+	b)add the reading of binary file into ArrayList<PaleoFood>
+		Add The writing of ArrayList to binary File
+		
