@@ -1,6 +1,7 @@
 package edu.ornagecoastcollege.cs170.jgordon41.ic29;
 
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class FoodJournalDemo
     static ArrayList<PaleoFoods> foodList = new ArrayList<>();
     public static void main(String[] args)
     {
-        ObjectInputStream inputBin = new ObjectInputStream();
+        ObjectOutputStream inputBin = new ObjectOutputStream();
         Scanner consoleScanner = new Scanner(System.in);
         
         boolean quit = false;
