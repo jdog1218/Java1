@@ -1,16 +1,36 @@
 package edu.ornagecoastcollege.cs170.jgordon41.ic29;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FoodJournalDemo
 {
     static ArrayList<PaleoFoods> foodList = new ArrayList<>();
+    static ObjectOutputStream outputBin;
+    static ObjectInputStream inputBin;
     public static void main(String[] args)
     {
-        ObjectOutputStream inputBin = new ObjectOutputStream();
+        FileInputStream file;
+        FileOutputStream output;
+        File fl = new File("file.dat");
+        try
+        {
+            file = new FileInputStream(fl);
+            output = new FileOutputStream(fl);
+            inputBin = new ObjectInputStream(file);
+            outputBin = new ObjectOutputStream(output);
+        }
+        catch (FileNotFoundException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         Scanner consoleScanner = new Scanner(System.in);
         
         boolean quit = false;
@@ -51,6 +71,13 @@ public class FoodJournalDemo
                 case 3://quit
                     quit = true;
                     break;
+                }
+            try{
+            for(PaleoFoods pl: foodList){
+                outputBin.writeObject(pl);
+            }
+            }catch (IOException e){
+                e.printStackTrace();
             }
         }while(!quit );
         
@@ -61,6 +88,8 @@ public class FoodJournalDemo
             for(PaleoFoods f : foodList){
                 System.out.println(f);
             }
+        }else if(){
+            
         }else
             System.out.println("No food yet!");
         System.out.println("");
