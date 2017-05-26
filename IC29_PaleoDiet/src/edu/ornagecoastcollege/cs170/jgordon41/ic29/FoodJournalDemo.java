@@ -7,19 +7,32 @@ import java.util.Scanner;
 public class FoodJournalDemo
 {
     static ArrayList<PaleoFoods> foodList = new ArrayList<>();
-    static ObjectOutputStream outputBin;
-    static ObjectInputStream inputBin;
+    static ObjectOutputStream fileWriter;
+    static ObjectInputStream fileReader;
+    @SuppressWarnings("unchecked")
     public static void main(String[] args)
     {
-        FileInputStream file;
-        FileOutputStream output;
-        File fl = new File("file.dat");
+        File binaryFile = new File("FoodJournalFile.dat");
+        
+        if(!binaryFile.exists()){
+            System.out.println("[No paleo Foods]");
+        }
+        else{
         try
         {
-            file = new FileInputStream(fl);
-            output = new FileOutputStream(fl);
-            inputBin = new ObjectInputStream(file);
-            outputBin = new ObjectOutputStream(output);
+            fileReader = new ObjectInputStream(new FileInputStream("binaryFile.dat"));
+            try
+            {
+                foodList = (ArrayList<PaleoFoods>) fileReader.readObject();
+            }
+            catch (ClassNotFoundException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            for (PaleoFoods p: foodList){
+                System.out.println(p);
+            }
         }
         catch (FileNotFoundException e)
         {
@@ -30,6 +43,7 @@ public class FoodJournalDemo
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
         }
         Scanner consoleScanner = new Scanner(System.in);
         
@@ -42,14 +56,30 @@ public class FoodJournalDemo
             consoleScanner.nextLine();
             switch (input){
                 case 1: //Meat
+                    String nameMeat = "";
                     System.out.print("Please enter the Name of the Meat: ");
-                    String nameMeat = consoleScanner.nextLine();
+                    nameMeat = consoleScanner.nextLine();
                     System.out.print("Enter (1) for Meat and (2) for Fish: ");
-                    int type = consoleScanner.nextInt();
+                    int type = 0;
+                    type = consoleScanner.nextInt();
                     System.out.print("How many Calories was it? ");
-                    int calo = consoleScanner.nextInt();
+                    int calo = 0;
+                    calo = consoleScanner.nextInt();
                     System.out.print("How many Carbohydrates? ");
-                    int cabo = consoleScanner.nextInt();
+                    int cabo = 0;
+                    cabo = consoleScanner.nextInt();
+                    
+                    Meat meat;
+                    try
+                    {
+                        meat = new Meat (nameMeat, calo, cabo, 250, type);
+                        foodList.add(meat);
+                    }
+                    catch (UnknownMeatException e1)
+                    {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
                     //try{
                         
                     //}catch (UknownMeatException e){
@@ -74,7 +104,7 @@ public class FoodJournalDemo
                 }
             try{
             for(PaleoFoods pl: foodList){
-                outputBin.writeObject(pl);
+                fileWriter.writeObject(pl);
             }
             }catch (IOException e){
                 e.printStackTrace();
@@ -88,12 +118,10 @@ public class FoodJournalDemo
             for(PaleoFoods f : foodList){
                 System.out.println(f);
             }
-        }else if(){
-            
         }else
             System.out.println("No food yet!");
         System.out.println("");
-        System.out.println("*******Option Menu *******/nEnter (1) to record a Meat" + 
+        System.out.println("*******Option Menu *******\nEnter (1) to record a Meat" + 
                 "\nEnter (2) to record a produce\nEnter (3) to quit");
     }
     
