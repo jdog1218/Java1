@@ -17,9 +17,12 @@ public class Meat extends PaleoFoods implements Serializable
         this.mCarbohydrates = carbohydrates;
         this.mName = name;
         mCookingTemp = cookingTemp;
-        mType = type;
-        if(type == 1 || type == 2 || type == 3)
+        if(type != 1 && type != 2 && type != 3){
             throw new UnknownMeatException();
+            
+        }else
+        	mType = type;
+        
     }
 
     /**
